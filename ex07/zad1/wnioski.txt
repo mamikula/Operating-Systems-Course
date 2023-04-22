@@ -1,0 +1,4 @@
+Dla N, M <= 5 każdy z procesów trwa mniej więcej tyle ile wynosi czas wypiekania pizzy
+Dla N,M > 5 każdy z procesów trwa dłużej niż czas wypiekania pizzy, ponieważ procesy muszą
+czekać aż zwolni sie stół lub piec
+Podobnie bedzie się działo jeżeli N będzie znacząco róże od M
