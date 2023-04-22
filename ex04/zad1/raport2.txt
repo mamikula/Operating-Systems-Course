@@ -1,0 +1,81 @@
+----------------------------------------------------------
+
+WNIOSKI - fork:
+
+Proces potomny dziedziczy ustawienia w przypadku wywołania:
+"ignore"
+"handler"
+"mask"
+
+W przypadku "pending" sygnał oczekujący
+w przodku NIE jest widoczny w potomku.
+
+----------------------------------------------------------
+
+WNIOSKI - exec:
+
+Proces potomny dziedziczy ustawienia w przypadku wywołania:
+"ignore"
+"mask"
+"pending"
+
+W przeciwieństwie do funkcji fork, tym razem sygnał
+oczekujący w przodku jest także widoczny w potomku.
+
+----------------------------------------------------------
+
+
+
+#################################################
+FORK TEST FORK TEST FORK TEST FORK TEST FORK TEST
+#################################################
+
+-----------------IGNORE TEST-----------------
+Raising signal...
+Raising signal in child process...
+
+-----------------HANDLER TEST-----------------
+Raising signal...
+Received signal 10. PID: 161, PPID: 153
+Raising signal in child process...
+Received signal 10. PID: 162, PPID: 161
+
+-----------------MASK TEST-----------------
+Raising signal...
+Signal pending
+Rising signal in child process...
+Signal pending [in child process]
+
+-----------------PENDING TEST-----------------
+Raising signal...
+Signal pending
+Child proces here
+Signal NOT pending [in child process]
+
+
+#################################################
+EXEC TEST EXEC TEST EXEC TEST EXEC TEST EXEC TEST
+#################################################
+
+-----------------IGNORE TEST-----------------
+Raising signal...
+Child
+Rising signal in child process...
+
+-----------------MASK TEST-----------------
+Raising signal...
+Signal pending
+Calling exec...
+Child
+Rising signal in child process...
+Signal pending [in child process]
+
+-----------------PENDING TEST-----------------
+Raising signal...
+Signal pending
+Calling exec...
+Child
+Signal pending [in child process]
+
+
+
