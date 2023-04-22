@@ -1,0 +1,108 @@
+Dla wariantu NUMBERS wyniki czasowe są znacznie gorsze niż dla wartiantu BLOCK,
+najpewniej jest to wynikiem przechodzenia całej tablicy przez każdy wątek w poszukiwaniu pikseli
+ze swojego przedziału.
+Dla większej liczby wątków całkowity czas wykoniania wydłuża się ze względu na
+tworzenie i kończenie się każdego z wątków.
+
+Inverting image: dragon.ascii.pgm with 1 threads using mode: NUMBERS
+Thread: 0 returned   760 microseconds
+Main thread took:   1161 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 1 threads using mode: BLOCK
+Thread: 0 returned   484 microseconds
+Main thread took:    756 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 2 threads using mode: NUMBERS
+Thread: 0 returned   611 microseconds
+Thread: 1 returned   611 microseconds
+Main thread took:   1023 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 2 threads using mode: BLOCK
+Thread: 0 returned   269 microseconds
+Thread: 1 returned   262 microseconds
+Main thread took:    712 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 4 threads using mode: NUMBERS
+Thread: 0 returned   611 microseconds
+Thread: 1 returned   630 microseconds
+Thread: 2 returned   553 microseconds
+Thread: 3 returned   593 microseconds
+Main thread took:    933 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 4 threads using mode: BLOCK
+Thread: 0 returned   163 microseconds
+Thread: 1 returned   139 microseconds
+Thread: 2 returned   142 microseconds
+Thread: 3 returned   142 microseconds
+Main thread took:    958 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 8 threads using mode: NUMBERS
+Thread: 0 returned   967 microseconds
+Thread: 1 returned   718 microseconds
+Thread: 2 returned   912 microseconds
+Thread: 3 returned   601 microseconds
+Thread: 4 returned   598 microseconds
+Thread: 5 returned   603 microseconds
+Thread: 6 returned   903 microseconds
+Thread: 7 returned   985 microseconds
+Main thread took:   1334 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 8 threads using mode: BLOCK
+Thread: 0 returned    96 microseconds
+Thread: 1 returned    73 microseconds
+Thread: 2 returned    73 microseconds
+Thread: 3 returned    76 microseconds
+Thread: 4 returned    70 microseconds
+Thread: 5 returned    75 microseconds
+Thread: 6 returned    97 microseconds
+Thread: 7 returned    77 microseconds
+Main thread took:   1072 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 16 threads using mode: NUMBERS
+Thread: 0 returned   844 microseconds
+Thread: 1 returned  1015 microseconds
+Thread: 2 returned   970 microseconds
+Thread: 3 returned   945 microseconds
+Thread: 4 returned  1029 microseconds
+Thread: 5 returned  1040 microseconds
+Thread: 6 returned   890 microseconds
+Thread: 7 returned  1072 microseconds
+Thread: 8 returned   962 microseconds
+Thread: 9 returned   911 microseconds
+Thread: 10 returned  1003 microseconds
+Thread: 11 returned   878 microseconds
+Thread: 12 returned   953 microseconds
+Thread: 13 returned   739 microseconds
+Thread: 14 returned   635 microseconds
+Thread: 15 returned   895 microseconds
+Main thread took:   2446 microseconds
+
+
+Inverting image: dragon.ascii.pgm with 16 threads using mode: BLOCK
+Thread: 0 returned    68 microseconds
+Thread: 1 returned    43 microseconds
+Thread: 2 returned    39 microseconds
+Thread: 3 returned    39 microseconds
+Thread: 4 returned    46 microseconds
+Thread: 5 returned    44 microseconds
+Thread: 6 returned    39 microseconds
+Thread: 7 returned    62 microseconds
+Thread: 8 returned    39 microseconds
+Thread: 9 returned    41 microseconds
+Thread: 10 returned    38 microseconds
+Thread: 11 returned    43 microseconds
+Thread: 12 returned    39 microseconds
+Thread: 13 returned    39 microseconds
+Thread: 14 returned    36 microseconds
+Thread: 15 returned    53 microseconds
+Main thread took:   2591 microseconds
+
+
